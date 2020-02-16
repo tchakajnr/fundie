@@ -35,18 +35,6 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <!-- <v-btn
-        class="hidden-sm-and-down"
-        text
-        color="grey"
-        v-for="link in links"
-        :key="link.text"
-        router
-        :to="link.route"
-      >
-        <v-icon left>{{ link.icon }}</v-icon>
-        <v-list-item-title>{{ link.text}}</v-list-item-title>
-      </v-btn>-->
       <v-spacer></v-spacer>
       <v-btn flat @click="submit" class="lighten-2 white--text primary mr-3 mx-0">
         Sign out
@@ -85,9 +73,14 @@
           </v-list-item>
         </v-list>
 
-        <v-flex class="mt-2 mb-3">
-          <Popup />
+         <v-flex class="mt-2 mb-3">
+          <Alipay />
         </v-flex>
+
+        <v-flex class="mt-2 mb-3">
+          <Wechat />
+        </v-flex>
+
       </v-layout>
 
       <v-list dense nav>
@@ -106,9 +99,11 @@
 </template>
 
 <script>
-import Popup from "./Popup";
+import Alipay from "./Alipay";
+import Wechat from "./Wechat";
+
 export default {
-  components: { Popup },
+  components: { Alipay, Wechat },
   data() {
     return {
       drawer: false,
